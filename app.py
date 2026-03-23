@@ -1,4 +1,4 @@
-﻿# Last updated: 2026-03-23 17:48:57
+# Last updated: 2026-03-23 17:48:57
 """
 Pow Wow Fuel Reconciliation â€” Command Center Dashboard (Cloud)
 Dark mode â€¢ Floating widgets â€¢ Donut gauges â€¢ Trend charts
