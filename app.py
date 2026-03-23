@@ -1,6 +1,7 @@
+﻿# Last updated: 2026-03-23 17:48:57
 """
-Pow Wow Fuel Reconciliation — Command Center Dashboard (Cloud)
-Dark mode • Floating widgets • Donut gauges • Trend charts
+Pow Wow Fuel Reconciliation â€” Command Center Dashboard (Cloud)
+Dark mode â€¢ Floating widgets â€¢ Donut gauges â€¢ Trend charts
 Reads from CSV files in /data directory.
 Computes all derived values in Python.
 """
@@ -13,12 +14,12 @@ from pathlib import Path
 
 st.set_page_config(
     page_title="Pow Wow Fuel Reconciliation",
-    page_icon="⛽",
+    page_icon="â›½",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
 
-# ── Password Gate ──
+# â”€â”€ Password Gate â”€â”€
 def check_password():
     if "authenticated" not in st.session_state:
         st.session_state.authenticated = False
@@ -36,7 +37,7 @@ def check_password():
     <div style="display: flex; justify-content: center; align-items: center; min-height: 60vh;">
         <div style="background: #161B22; border: 1px solid #30363D; border-radius: 16px; 
              padding: 48px; text-align: center; max-width: 400px; width: 100%;">
-            <div style="font-size: 48px; margin-bottom: 16px;">⛽</div>
+            <div style="font-size: 48px; margin-bottom: 16px;">â›½</div>
             <div style="font-size: 24px; font-weight: 700; color: #E6EDF3; margin-bottom: 8px;">
                 POW WOW FUEL
             </div>
@@ -61,7 +62,7 @@ def check_password():
 if not check_password():
     st.stop()
 
-# ── Dark Mode CSS ──
+# â”€â”€ Dark Mode CSS â”€â”€
 st.markdown("""
 <style>
     .stApp { background-color: #0D1117; color: #E6EDF3; }
@@ -118,7 +119,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# ── Load Data from CSV ──
+# â”€â”€ Load Data from CSV â”€â”€
 DATA_DIR = Path(__file__).parent / "data"
 
 @st.cache_data(ttl=300)
@@ -206,12 +207,12 @@ dark_layout = dict(
     yaxis=dict(gridcolor='#21262D', linecolor='#30363D'),
 )
 
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # TITLE
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 st.markdown("""
 <div class="title-bar">
-    <h1>⛽ POW WOW <span style="color: #484F58; font-weight: 400;">FUEL RECONCILIATION</span></h1>
+    <h1>â›½ POW WOW <span style="color: #484F58; font-weight: 400;">FUEL RECONCILIATION</span></h1>
     <div class="subtitle">Daily Reconciliation & Profitability Command Center</div>
 </div>
 """, unsafe_allow_html=True)
@@ -220,9 +221,9 @@ if dr is None:
     st.error("Could not load data files.")
     st.stop()
 
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # DATE FILTER
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 dr['Date'] = pd.to_datetime(dr['Date'])
 min_date = dr['Date'].min().date()
 max_date = dr['Date'].max().date()
@@ -260,10 +261,10 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # DAILY RECON HEALTH
-# ════════════════════════════════════════════
-st.markdown('<div class="section-header">🔒 DAILY RECON HEALTH</div>', unsafe_allow_html=True)
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+st.markdown('<div class="section-header">ðŸ”’ DAILY RECON HEALTH</div>', unsafe_allow_html=True)
 
 days = len(dr)
 sales_mm = int((dr['Sales_Match'] == 'MISMATCH').sum())
@@ -291,9 +292,9 @@ with c6:
     val = f"${net_eft_diff:,.2f}" if not pd.isna(net_eft_diff) else "$0.00"
     st.markdown(metric_card("Net EFT Diff", val, "orange", alert=alert), unsafe_allow_html=True)
 
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # MONEY OWED ALERT
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 eft_diff_val = 0
 if eft is not None and 'Difference' in eft.columns:
     eft_diff_val = eft['Difference'].sum()
@@ -357,7 +358,7 @@ with owed_col3:
     <div style="background: linear-gradient(135deg, #0D2818 0%, #1a4d2e 100%); 
          border: 2px solid #3FB950; border-radius: 12px; padding: 20px; text-align: center;">
         <div style="font-size: 11px; color: #3FB950; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">
-            💰 TOTAL OWED TO YOU
+            ðŸ’° TOTAL OWED TO YOU
         </div>
         <div style="font-size: 42px; font-weight: 700; color: {total_color};">
             ${total_owed:,.2f}
@@ -368,10 +369,10 @@ with owed_col3:
     </div>
     """, unsafe_allow_html=True)
 
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # PROFITABILITY
-# ════════════════════════════════════════════
-st.markdown('<div class="section-header">📊 PROFITABILITY & PERFORMANCE</div>', unsafe_allow_html=True)
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+st.markdown('<div class="section-header">ðŸ“Š PROFITABILITY & PERFORMANCE</div>', unsafe_allow_html=True)
 
 total_sales = dr['Invoice_Sales'].sum()
 total_cost = dr['Fuel_Cost'].sum()
@@ -396,10 +397,10 @@ with p5:
 with p6:
     st.markdown(metric_card("Total Gas CC", f"${total_cc:,.0f}", "orange"), unsafe_allow_html=True)
 
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # CHARTS
-# ════════════════════════════════════════════
-st.markdown('<div class="section-header">📈 TRENDS & GAUGES</div>', unsafe_allow_html=True)
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+st.markdown('<div class="section-header">ðŸ“ˆ TRENDS & GAUGES</div>', unsafe_allow_html=True)
 
 chart_left, chart_right = st.columns([1, 1])
 
@@ -429,7 +430,7 @@ with chart_right:
         st.markdown("""
         <div style="background: #161B22; border: 1px solid #30363D; border-radius: 12px; padding: 16px;">
             <div style="font-size: 14px; font-weight: 600; color: #E6EDF3; margin-bottom: 4px;">
-                🚨 EFT Settlement Discrepancies
+                ðŸš¨ EFT Settlement Discrepancies
             </div>
             <div style="font-size: 11px; color: #8B949E;">Per-EFT shortage + cumulative running total</div>
         </div>
@@ -485,10 +486,10 @@ with ch2_right:
                                           font_color='#58A6FF' if gpct > 90 else '#F85149', showarrow=False)])
     st.plotly_chart(fig_d2, use_container_width=True, config={'displayModeBar': False})
 
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # RECENT TRANSACTIONS
-# ════════════════════════════════════════════
-st.markdown('<div class="section-header">📋 RECENT DAILY RECONCILIATION</div>', unsafe_allow_html=True)
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+st.markdown('<div class="section-header">ðŸ“‹ RECENT DAILY RECONCILIATION</div>', unsafe_allow_html=True)
 
 display_cols = ['Date', 'Meter_Sales', 'Invoice_Sales', 'Sales_Diff', 'Meter_Gallons', 
                 'Invoice_Gallons', 'Gallon_Diff', 'Gas_CC', 'Fuel_Cost', 'Fuel_Profit',
@@ -516,13 +517,13 @@ display_df = display_df.rename(columns=rename_display)
 
 st.dataframe(display_df, use_container_width=True, height=500, hide_index=True)
 
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # EFT MISMATCH DETAIL
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 if eft is not None and 'Difference' in eft.columns:
     mismatched_efts = eft[abs(eft['Difference']) > 0.01].copy()
     if len(mismatched_efts) > 0:
-        st.markdown('<div class="section-header">🚨 EFT SETTLEMENT MISMATCHES</div>', unsafe_allow_html=True)
+        st.markdown('<div class="section-header">ðŸš¨ EFT SETTLEMENT MISMATCHES</div>', unsafe_allow_html=True)
         
         eft_display_cols = ['EFT_Date', 'Consignment', 'Gross_CC', 'CC_Fees', 'Fuelman_Gross',
                            'Expected_Draft', 'Actual_Draft', 'Difference', 'Direction']
@@ -547,12 +548,13 @@ if eft is not None and 'Difference' in eft.columns:
         
         st.dataframe(eft_display, use_container_width=True, height=400, hide_index=True)
 
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 # FOOTER
-# ════════════════════════════════════════════
+# â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 st.markdown("""
 <div style="text-align: center; padding: 24px 0; color: #484F58; font-size: 12px; 
      border-top: 1px solid #21262D; margin-top: 32px;">
-    POW WOW LLC  ·  Prince Oil Company  ·  Fuel Reconciliation Command Center
+    POW WOW LLC  Â·  Prince Oil Company  Â·  Fuel Reconciliation Command Center
 </div>
 """, unsafe_allow_html=True)
+
