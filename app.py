@@ -14,7 +14,7 @@ from pathlib import Path
 
 st.set_page_config(
     page_title="Pow Wow Fuel Reconciliation",
-    page_icon="[GAS]",
+    page_icon="GAS",
     layout="wide",
     initial_sidebar_state="collapsed",
 )
@@ -37,7 +37,7 @@ def check_password():
     <div style="display: flex; justify-content: center; align-items: center; min-height: 60vh;">
         <div style="background: #161B22; border: 1px solid #30363D; border-radius: 16px; 
              padding: 48px; text-align: center; max-width: 400px; width: 100%;">
-            <div style="font-size: 48px; margin-bottom: 16px;">[GAS]</div>
+            <div style="font-size: 48px; margin-bottom: 16px;">GAS</div>
             <div style="font-size: 24px; font-weight: 700; color: #E6EDF3; margin-bottom: 8px;">
                 POW WOW FUEL
             </div>
@@ -212,7 +212,7 @@ dark_layout = dict(
 # â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 st.markdown("""
 <div class="title-bar">
-    <h1>[GAS] POW WOW <span style="color: #484F58; font-weight: 400;">FUEL RECONCILIATION</span></h1>
+    <h1>GAS POW WOW <span style="color: #484F58; font-weight: 400;">FUEL RECONCILIATION</span></h1>
     <div class="subtitle">Daily Reconciliation & Profitability Command Center</div>
 </div>
 """, unsafe_allow_html=True)
