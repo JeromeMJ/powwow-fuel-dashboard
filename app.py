@@ -344,7 +344,7 @@ if eft is not None and 'Difference' in eft.columns:
 # Unsettled amount = Gas Report CC - Meter Fuel Sales for each unsettled day
 import json as _json
 
-SETTLED_DATES_PATH = os.path.join(
+    SETTLED_DATES_PATH = str(DATA_DIR / 'settled_dates.json') if IS_CLOUD else os.path.join(
     os.environ.get("USERPROFILE", ""), ".openclaw", "workspace", "fuel_automation", "settled_dates.json"
 )
 
