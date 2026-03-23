@@ -203,7 +203,7 @@ def load_data():
                 eft[col] = pd.to_numeric(eft[col], errors='coerce')
         
         if 'Consignment' in eft.columns and 'Gross_CC' in eft.columns:
-            eft['Expected_Draft'] = eft['Gross_CC'] - eft['Consignment'] - eft['CC_Fees'].fillna(0) - eft['Fuelman_Gross'].fillna(0)
+            eft['Expected_Draft'] = (eft['Gross_CC'] - eft['CC_Fees'].fillna(0)) + (eft['Fuelman_Gross'].fillna(0) - eft['Fuelman_Fees'].fillna(0)) - eft['Consignment']
             eft['Difference'] = eft['Actual_Draft'] - eft['Expected_Draft']
             eft['Settlement_Match'] = np.where(
                 eft['Actual_Draft'].isna(), '',

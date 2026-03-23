@@ -1,4 +1,16 @@
-Date,Meter_Sales,Invoice_Sales,Sales_Diff,Meter_Gallons,Invoice_Gallons,Gallon_Diff,Gas_CC,Fuel_Cost,Fuel_Profit,Margin_Per_Gallon,Sales_Match,Gallon_Match,Notes
+Date,"Meter
+Fuel Sales","Invoice
+Fuel Sales","Sales
+Difference","Meter
+Total Gallons","Invoice
+Total Gallons","Gallon
+Difference","Gas Report
+Credit Cards","Fuel
+Cost","Fuel
+Profit","Margin
+Per Gallon","Sales
+Match","Gallon
+Match",Notes
 2026-03-18,3880.1,3880.1,,1091.969,1092.0,,8700.19,3407.07,473.03,,,,
 2026-03-19,4521.5,3912.08,,1205.432,1082.0,,3890.25,3397.06,515.02,,,,
 2026-01-05,2191.85,2191.85,,720.095,720.0,,6796.26,1623.81,568.04,,,,

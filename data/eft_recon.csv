@@ -1,4 +1,18 @@
-EFT_Date,Reference,Period_Start,Period_End,Num_Days,Sum_Invoices,Consignment,Invoice_Variance,Gross_CC,CC_Fees,Fuelman_Gross,Fuelman_Fees,Expected_Draft,Actual_Draft,Difference,Direction,Invoice_Match,Settlement_Match,Notes
+EFT Date,Reference #,"Period
+Start","Period
+End",# Days,"Sum of Daily
+Invoices","EFT Consignment
+Settlement","Invoice
+Variance","EFT Gross
+Credit Cards","EFT CC
+Fees","EFT Fuelman
+Gross","EFT Fuelman
+Fees","Expected
+Draft","Actual
+Draft",Difference,"Draft
+Direction","Invoice
+Match","Settlement
+Match",Notes
 2026-03-16,D-119917-031626,2026-03-12,2026-03-17,,,13162.42,,30710.4,312.17,78.94,0.79,,17313.96,,,,,
 2026-01-05,D-118321-010526,2026-01-01,2026-01-06,,,6705.32,,25600.78,265.75,76.18,0.76,,18705.13,,,,,
 2026-01-06,D-118353-010626,2026-01-04,2026-01-07,,,2140.21,,6093.25,66.84,48.18,0.48,,3933.9,,,,,
