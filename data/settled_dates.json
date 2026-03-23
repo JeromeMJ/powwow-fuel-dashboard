@@ -466,5 +466,29 @@
     "invoice_amount": 3469.14,
     "invoice_number": "INV-486083-26",
     "eft_ref": "D-120000-031926"
+  },
+  "2026-03-18": {
+    "eft_date": "2026-03-23",
+    "invoice_amount": 3880.1,
+    "invoice_number": "INV-486243-26",
+    "eft_ref": "D-120065-032326"
+  },
+  "2026-03-19": {
+    "eft_date": "2026-03-23",
+    "invoice_amount": 3912.08,
+    "invoice_number": "INV-486428-26",
+    "eft_ref": "D-120065-032326"
+  },
+  "2026-03-20": {
+    "eft_date": "2026-03-23",
+    "invoice_amount": 5008.45,
+    "invoice_number": "INV-486456-26",
+    "eft_ref": "D-120065-032326"
+  },
+  "2026-03-21": {
+    "eft_date": "2026-03-23",
+    "invoice_amount": 5185.1,
+    "invoice_number": "INV-486471-26",
+    "eft_ref": "D-120065-032326"
   }
 }
