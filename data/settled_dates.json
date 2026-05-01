@@ -718,5 +718,11 @@
     "invoice_amount": 3979.34,
     "invoice_number": "INV-492588-26",
     "eft_ref": "D-121194-043026"
+  },
+  "2026-04-29": {
+    "eft_date": "2026-05-01",
+    "invoice_amount": 3278.12,
+    "invoice_number": "INV-492744-26",
+    "eft_ref": "D-121228-050126"
   }
 }
